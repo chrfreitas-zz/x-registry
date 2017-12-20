@@ -1,4 +1,5 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
     entry: './src/js/App.js',
@@ -19,7 +20,10 @@ const config = {
         ]
     },
     plugins: [
-        new UglifyJsPlugin()
+        new UglifyJsPlugin(),
+        new HtmlWebpackPlugin({
+            template: './public/index.html'
+        })
     ]
 };
 
