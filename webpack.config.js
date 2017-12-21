@@ -1,30 +1,19 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const devConfig = require('./webpack.dev.config.js');
+const prodConfig = require('./webpack.prod.config.js');
+let config = '';
 
-const config = {
-    entry: './src/js/App.js',
-    output: {
-        path: __dirname + '/public',
-        filename: 'bundle.js',
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['react', 'es2015']
-                }
-            }
-        ]
-    },
-    plugins: [
-        new UglifyJsPlugin(),
-        new HtmlWebpackPlugin({
-            template: './public/index.html'
-        })
-    ]
-};
+switch (process.env.npm_lifecycle_event) {
+    case 'start':
+        config = devConfig;
+        break;
+
+    case 'build':
+        config = prodConfig;
+        break;
+
+    default:
+        config = devConfig;
+        break;
+}
 
 module.exports = config;
