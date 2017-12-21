@@ -1,4 +1,3 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
@@ -15,6 +14,11 @@ const config = {
                 query: {
                     presets: ['react', 'es2015']
                 }
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader:  'eslint-loader'
             }
         ]
     },
