@@ -1,5 +1,6 @@
 const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -11,7 +12,7 @@ module.exports = {
         filename: "[name].js"
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -19,6 +20,18 @@ module.exports = {
                 query: {
                   presets: ['react', 'es2015']
                 }
+            },
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                    use: [{
+                        loader: 'css-loader',
+                        options: {
+                            minimize: true
+                        }
+                    }, 'postcss-loader' ]
+                })
             }
         ]
     },
@@ -30,6 +43,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({ template: './views/index.html' }),
         new Webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }}),
-        new Webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
+        new Webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
+        new ExtractTextPlugin('main.css')
     ]
 }

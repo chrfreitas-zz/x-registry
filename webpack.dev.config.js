@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     entry: './src/js/App.js',
@@ -6,7 +7,7 @@ const config = {
         filename: 'bundle.js',
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -22,25 +23,15 @@ const config = {
             },
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'style-loader',
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader'
-                    }
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [ 'css-loader', 'postcss-loader' ]
+                })
             }
         ]
     },
     plugins: [
+        new ExtractTextPlugin('main.css'),
         new HtmlWebpackPlugin({template: './views/index.html'})
     ]
 };
