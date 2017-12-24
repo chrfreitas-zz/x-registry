@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --inline --hot",
     "build": "webpack",
     "test": "jest"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrfreitas/x-registry.git"
@@ -20,7 +20,8 @@
   "homepage": "https://github.com/chrfreitas/x-registry#readme",
   "dependencies": {
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.3",
