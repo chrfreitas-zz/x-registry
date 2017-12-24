@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Style from '../css/main.css';
+import Table from './Table';
+import Modal from './Modal';
 
-ReactDOM.render(<h1>Hello World</h1>, document.getElementById('root'));
+ReactDOM.render(<div>
+                    <Table />
+                    <Modal/>
+                </div>, document.getElementById('root'));
