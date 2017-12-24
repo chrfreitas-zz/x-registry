@@ -1,11 +1,7 @@
+export const ADD_ITEM = 'ADD_ITEM';
+
 export const add = () => {
     return {
-        type: 'ADD_ITEM'
-    }
-}
-
-export const remove = () => {
-    return {
-        type: 'REMOVE_ITEM'
+        type: ADD_ITEM
     }
 }
