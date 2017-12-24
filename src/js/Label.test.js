@@ -1,15 +1,16 @@
 import React from 'react';
 import Label from './Label';
-//import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+Enzyme.configure({ adapter: new Adapter() });
+
 
 test('Label basic test', () => {
-
-    const component = renderer.create(
+    const label = shallow(
         <Label name="Hi!" />
     );
 
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-
+    expect(label.text()).toEqual('Hi!');
 });

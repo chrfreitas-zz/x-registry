@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --inline --hot",
     "build": "webpack",
     "test": "jest"
-  },
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrfreitas/x-registry.git"
