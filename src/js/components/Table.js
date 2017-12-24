@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Table extends React.Component {
     constructor(props){
         super(props);
+        this.store = this.props.store;
     }
 
     render() {
@@ -37,5 +39,8 @@ class Table extends React.Component {
     }
 }
 
+Table.propTypes = {
+    store: PropTypes.any
+}
 
 export default Table;

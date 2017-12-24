@@ -1,8 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import action from '../actions/action';
 
 class Modal extends React.Component {
     constructor(props){
         super(props);
+        
+        this.store = this.props.store;
+    }
+
+    handleAddItem(){
+        this.store.dispatch({
+            type: action.ADD_ITEM
+        });
     }
 
     render() {
@@ -28,7 +38,7 @@ class Modal extends React.Component {
                 </div>
                 <div className="form-group">
                     <div className="col-sm-offset-3 col-sm-9">
-                        <button type="submit" className="btn btn-default">Save changes</button>
+                        <button type="button" className="btn btn-default" onClick={this.handleAddItem.bind(this)}>Save changes</button>
                     </div>
                 </div>
             </form>
@@ -36,5 +46,8 @@ class Modal extends React.Component {
     }
 }
 
+Modal.propTypes = {
+    store: PropTypes.any
+}
 
 export default Modal;
