@@ -1,5 +1,11 @@
-const actions = {
-    ADD_ITEM: 'ADD_ITEM'
+export const add = () => {
+    return {
+        type: 'ADD_ITEM'
+    }
 }
 
-export default actions;
+export const remove = () => {
+    return {
+        type: 'REMOVE_ITEM'
+    }
+}

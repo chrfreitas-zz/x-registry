@@ -1,18 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import action from '../actions/action';
+
+import { add } from '../actions/action';
 
 class Modal extends React.Component {
     constructor(props){
         super(props);
-        
         this.store = this.props.store;
     }
 
     handleAddItem(){
-        this.store.dispatch({
-            type: action.ADD_ITEM
-        });
+        this.store.dispatch(add());
     }
 
     render() {
