@@ -1,46 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-class Table extends React.Component {
-    constructor(props){
-        super(props);
-        this.store = this.props.store;
-    }
-
-    render() {
-        return (
-            <table className="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Domain name</th>
-                        <th>Uniregistry</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>foofighter.lol</td>
-                        <td>Y</td>
-                        <td>$12.00</td>
-                    </tr>
-                    <tr>
-                        <td>selfdriven.cars</td>
-                        <td>Y</td>
-                        <td>$16.00</td>
-                    </tr>
-                    <tr>
-                        <td>greendiamondky.com</td>
-                        <td>N</td>
-                        <td>$9.00</td>
-                    </tr>
-                </tbody>
-            </table>
-        )
-    }
-}
+const Table = ({items}) => (
+    <table className="table table-striped">
+        <thead>
+            <tr>
+                <th>Domain name</th>
+                <th>Uniregistry</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {items.map((item, index) => (
+                <tr key={index}>
+                    <td>{item.email}</td>
+                    <td>{item.is}</td>
+                    <td>{item.price}</td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
+)
 
 Table.propTypes = {
-    store: PropTypes.any
+    items: PropTypes.array
 }
 
 export default Table;
