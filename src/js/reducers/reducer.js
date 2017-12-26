@@ -1,4 +1,4 @@
-import { ADD_ITEM } from '../actions/action';
+import { ADD_ITEM } from '../actions/app.action';
 
 export default (state = [], action) => {
     switch (action.type) {

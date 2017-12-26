@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import Table from '../components/Table';
-import { add } from '../actions/action';
+
+import ListComponent from '../components/list.component';
+import { add } from '../actions/app.action';
 
 const mapStateToProps = state => {
     return {
@@ -29,9 +30,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const TableList = connect(
+const ListContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Table)
+)(ListComponent)
 
-export default TableList
+export default ListContainer

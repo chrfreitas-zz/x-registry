@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Text } from 'react-form';
 import PropTypes from 'prop-types';
 
-const Modal = ({ onSubmit }) => (
+const FormComponent = ({ onSubmit }) => (
     <Form onSubmit={onSubmit}>
         { formApi => (
             <form onSubmit={formApi.submitForm}  className="form-horizontal">
@@ -34,8 +34,8 @@ const Modal = ({ onSubmit }) => (
     </Form>
 )
 
-Modal.propTypes = {
+FormComponent.propTypes = {
     onSubmit: PropTypes.func
 }
 
-export default Modal;
+export default FormComponent;

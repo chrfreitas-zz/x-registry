@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-class Table extends React.Component {
+class ListComponent extends React.Component {
 
     constructor(props){
         super(props);
@@ -37,10 +37,10 @@ class Table extends React.Component {
 
 }
 
-Table.propTypes = {
+ListComponent.propTypes = {
     domains: PropTypes.array,
     load: PropTypes.func,
     checkUnregistry: PropTypes.func
 }
 
-export default Table;
+export default ListComponent;

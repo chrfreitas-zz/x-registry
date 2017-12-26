@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import Modal from '../components/Modal';
-import { add } from '../actions/action';
+
+import FormComponent from '../components/form.component';
+import { add } from '../actions/app.action';
 
 const mapStateToProps = () => {
     return {}
@@ -19,9 +20,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const Form = connect(
+const FormContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Modal)
+)(FormComponent)
 
-export default Form
+export default FormContainer
