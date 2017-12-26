@@ -9,19 +9,19 @@ const Modal = ({ onSubmit }) => (
                 <div className="form-group">
                     <label htmlFor="domain" className="col-sm-3 control-label">Domain name</label>
                     <div className="col-sm-9">
-                        <Text field="domain" className="form-control" id="domain" />
+                        <Text field="domain" className="form-control" id="domain" required/>
                     </div>
                 </div>
                 <div className="form-group">
                     <label htmlFor="email" className="col-sm-3 control-label">Registran Email</label>
                     <div className="col-sm-9">
-                        <Text field="email" className="form-control" id="email" />
+                        <Text field="email" className="form-control" id="email" required/>
                     </div>
                 </div>
                 <div className="form-group">
                     <label htmlFor="price" className="col-sm-3 control-label">Price</label>
                     <div className="col-sm-9">
-                        <Text field="price" className="form-control" id="price" />
+                        <Text field="price" className="form-control" id="price" required/>
                     </div>
                 </div>
                 <div className="form-group">
