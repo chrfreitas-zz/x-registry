@@ -6,9 +6,9 @@ export default (state = [], action) => {
             return [
                 ...state,
                 {
-                    domain: action.item.domain,
-                    is: action.item.is,
-                    price: action.item.price
+                    id: action.domain.id,
+                    domain: action.domain.domain,
+                    price: action.domain.price
                 }
             ];
             break;

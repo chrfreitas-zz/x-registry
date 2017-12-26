@@ -1,12 +1,12 @@
 export const ADD_ITEM = 'ADD_ITEM';
 
-export const add = (item) => {
+export const add = (domain) => {
     return {
         type: ADD_ITEM,
-        item: {
-            domain: item.domain,
-            is: item.is,
-            price: item.price
+        domain: {
+            id: domain.id,
+            domain: domain.domain,
+            price: domain.price
         }
     }
 }

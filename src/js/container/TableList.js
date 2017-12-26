@@ -4,7 +4,7 @@ import { add } from '../actions/action';
 
 const mapStateToProps = state => {
     return {
-        items: state
+        domains: state
     }
 }
 
@@ -16,11 +16,19 @@ const mapDispatchToProps = (dispatch) => {
                     return response.json()
                 })
                 .then(( {domains} ) => {
-                    domains.forEach(item => {
+                    domains.map(item => {
                         dispatch(add(item))
                     })
-                })
+                });
+        },
+        checkUnregistry: (domain) => {
+            const extension = domain.split('.')[1];
+
+            if(extension.match(/cars|lol/)){
+                return 'YES';
+            }
         }
+
     }
 }
 

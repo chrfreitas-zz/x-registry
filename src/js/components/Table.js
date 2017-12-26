@@ -23,11 +23,11 @@ class Table extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.props.items.map((item, index) => (
+                    {this.props.domains.map((domain, index) => (
                         <tr key={index}>
-                            <td>{item.domain}</td>
-                            <td>{item.is}</td>
-                            <td>{item.price}</td>
+                            <td>{domain.domain}</td>
+                            <td>{this.props.checkUnregistry(domain.domain)}</td>
+                            <td>{domain.price}</td>
                         </tr>
                     ))}
                 </tbody>
@@ -38,8 +38,9 @@ class Table extends React.Component {
 }
 
 Table.propTypes = {
-    items: PropTypes.array,
-    load: PropTypes.func
+    domains: PropTypes.array,
+    load: PropTypes.func,
+    checkUnregistry: PropTypes.func
 }
 
 export default Table;
