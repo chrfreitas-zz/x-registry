@@ -20,12 +20,9 @@ const mapDispatchToProps = (dispatch) => {
                     domains.map(item => dispatch(add(item)))
                 });
         },
-        checkUnregistry: (domain) => {
+        isUnregistry: (domain) => {
             const extension = domain.split('.')[1];
-
-            if(extension && extension.match(/cars|lol/)){
-                return 'YES';
-            }
+            return (extension && extension.match(/cars|lol/));
         }
     }
 }

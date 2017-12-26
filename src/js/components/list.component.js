@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Check from './check.component';
+
 class ListComponent extends React.Component {
 
     constructor(props){
@@ -26,7 +28,7 @@ class ListComponent extends React.Component {
                     {this.props.domains.map((domain, index) => (
                         <tr key={index}>
                             <td>{domain.domain}</td>
-                            <td>{this.props.checkUnregistry(domain.domain)}</td>
+                            <td>{this.props.isUnregistry(domain.domain) ? <Check /> : null}</td>
                             <td>{domain.price}</td>
                         </tr>
                     ))}
@@ -40,7 +42,7 @@ class ListComponent extends React.Component {
 ListComponent.propTypes = {
     domains: PropTypes.array,
     load: PropTypes.func,
-    checkUnregistry: PropTypes.func
+    isUnregistry: PropTypes.func
 }
 
 export default ListComponent;
