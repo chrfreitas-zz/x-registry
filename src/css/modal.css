@@ -1,0 +1,8 @@
+.x-modal {
+    display: none;
+    position: absolute;
+}
+
+.x-modal-opened {
+    display: block;
+}

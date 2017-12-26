@@ -1,0 +1,5 @@
+.x-table {
+    border: 1px solid var(--x-gray);
+    padding: 10px;
+    width: 100%;
+}
