@@ -4,7 +4,7 @@ export const add = (item) => {
     return {
         type: ADD_ITEM,
         item: {
-            email: item.email,
+            domain: item.domain,
             is: item.is,
             price: item.price
         }

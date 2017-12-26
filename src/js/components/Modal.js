@@ -27,7 +27,7 @@ let Modal = ({ dispatch }) => (
             <div className="col-sm-offset-3 col-sm-9">
                 <button type="button" className="btn btn-default" onClick={() => {
                     dispatch(add({
-                        email: 'chrfreitas@gmail.com',
+                        domain: 'chrfreitas@gmail.com',
                         is: true,
                         price: '12.00'
                     }))

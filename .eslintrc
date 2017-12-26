@@ -12,7 +12,8 @@
     'parser': 'babel-eslint',
     'globals': {
         'document': true,
-        'console': true
+        'console': true,
+        'fetch': true
     },
     'plugins': [ 'react' ],
     'extends': [ 'plugin:react/recommended' ]

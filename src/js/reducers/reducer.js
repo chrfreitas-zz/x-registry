@@ -6,7 +6,7 @@ export default (state = [], action) => {
             return [
                 ...state,
                 {
-                    email: action.item.email,
+                    domain: action.item.domain,
                     is: action.item.is,
                     price: action.item.price
                 }
