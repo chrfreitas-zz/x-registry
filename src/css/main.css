@@ -1,6 +1,6 @@
 @import "../../vendor/bootstrap/bootstrap.min.css";
 
-.container-x {
+.x-container{
     max-width: 650px;
     margin: 0 auto;
 }

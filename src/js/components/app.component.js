@@ -4,7 +4,7 @@ import ListContainer from '../container/list.container';
 import FormContainer from '../container/form.container';
 
 const App = () => (
-    <div>
+    <div className="x-container">
         <ListContainer />
         <FormContainer />
     </div>
