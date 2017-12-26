@@ -15,20 +15,17 @@ const mapDispatchToProps = (dispatch) => {
                 .then(response => {
                     return response.json()
                 })
-                .then(( {domains} ) => {
-                    domains.map(item => {
-                        dispatch(add(item))
-                    })
+                .then(({ domains }) => {
+                    domains.map(item => dispatch(add(item)))
                 });
         },
         checkUnregistry: (domain) => {
             const extension = domain.split('.')[1];
 
-            if(extension.match(/cars|lol/)){
+            if(extension && extension.match(/cars|lol/)){
                 return 'YES';
             }
         }
-
     }
 }
 

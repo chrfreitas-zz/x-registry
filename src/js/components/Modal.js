@@ -1,46 +1,41 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { add } from '../actions/action';
+import { Form, Text } from 'react-form';
 import PropTypes from 'prop-types';
 
-let Modal = ({ dispatch }) => (
-    <form className="form-horizontal">
-        <div className="form-group">
-            <label htmlFor="input1" className="col-sm-3 control-label">Domain name</label>
-            <div className="col-sm-9">
-                <input type="text" className="form-control" id="input1" />
-            </div>
-        </div>
-        <div className="form-group">
-            <label htmlFor="input2" className="col-sm-3 control-label">Registran Email</label>
-            <div className="col-sm-9">
-                <input type="text" className="form-control" id="input2" />
-            </div>
-        </div>
-        <div className="form-group">
-            <label htmlFor="input3" className="col-sm-3 control-label">Price</label>
-            <div className="col-sm-9">
-                <input type="text" className="form-control" id="input3" />
-            </div>
-        </div>
-        <div className="form-group">
-            <div className="col-sm-offset-3 col-sm-9">
-                <button type="button" className="btn btn-default" onClick={() => {
-                    dispatch(add({
-                        domain: 'chrfreitas@gmail.com',
-                        is: true,
-                        price: '12.00'
-                    }))
-                } }>Save changes</button>
-            </div>
-        </div>
-    </form>
+const Modal = ({ onSubmit }) => (
+    <Form onSubmit={onSubmit}>
+        { formApi => (
+            <form onSubmit={formApi.submitForm}  className="form-horizontal">
+                <div className="form-group">
+                    <label htmlFor="domain" className="col-sm-3 control-label">Domain name</label>
+                    <div className="col-sm-9">
+                        <Text field="domain" className="form-control" id="domain" />
+                    </div>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="email" className="col-sm-3 control-label">Registran Email</label>
+                    <div className="col-sm-9">
+                        <Text field="email" className="form-control" id="email" />
+                    </div>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="price" className="col-sm-3 control-label">Price</label>
+                    <div className="col-sm-9">
+                        <Text field="price" className="form-control" id="price" />
+                    </div>
+                </div>
+                <div className="form-group">
+                    <div className="col-sm-offset-3 col-sm-9">
+                        <button type="submit" className="btn btn-default">Save changes</button>
+                    </div>
+                </div>
+            </form>
+        )}
+    </Form>
 )
 
 Modal.propTypes = {
-    dispatch: PropTypes.func
+    onSubmit: PropTypes.func
 }
-
-Modal = connect()(Modal);
 
 export default Modal;
