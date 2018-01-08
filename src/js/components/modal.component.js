@@ -1,5 +1,5 @@
 import React from 'react';
-import FormContainer from '../container/form.container';
+import FormContainer from '../containers/form.container';
 
 const Modal = () => (
     <div className="x-modal">

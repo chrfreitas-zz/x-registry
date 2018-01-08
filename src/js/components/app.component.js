@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ListContainer from '../container/list.container';
+import ListContainer from '../containers/list.container';
 import ModalComponent from './modal.component';
 
 const App = () => (
