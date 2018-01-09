@@ -27,7 +27,7 @@ class ListComponent extends React.Component {
                     </thead>
                     <tbody>
                         {this.props.domains.map((domain, index) => (
-                            <tr key={index}>
+                            <tr key={index} onClick={() => { this.props.onClickItem(domain) }}>
                                 <td>{domain.domain}</td>
                                 <td>{this.props.isUnregistry(domain.domain) ? <Check /> : null}</td>
                                 <td>{domain.price}</td>
@@ -44,7 +44,8 @@ class ListComponent extends React.Component {
 ListComponent.propTypes = {
     domains: PropTypes.array,
     load: PropTypes.func,
-    isUnregistry: PropTypes.func
+    isUnregistry: PropTypes.func,
+    onClickItem: PropTypes.func
 }
 
 export default ListComponent;
