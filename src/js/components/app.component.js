@@ -1,12 +1,12 @@
 import React from 'react'
 
 import ListContainer from '../containers/list.container';
-import ModalComponent from './modal.component';
+import FormContainer from '../containers/form.container';
 
 const App = () => (
     <div className="x-container">
         <ListContainer />
-        <ModalComponent />
+        <FormContainer />
     </div>
 )
 

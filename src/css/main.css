@@ -1,7 +1,6 @@
 @import "../../vendor/bootstrap/bootstrap.min.css";
 
 @import "variables";
-@import "modal";
 @import "table";
 
 html,
@@ -19,4 +18,5 @@ body,
     align-items: center;
     height: 100%;
     padding: 10px;
+    flex-direction: column;
 }
