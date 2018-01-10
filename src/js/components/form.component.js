@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const FormComponent = ({ onSubmit }) => (
     <Form onSubmit={onSubmit}>
         { formApi => (
-            <form onSubmit={formApi.submitForm}  className="form-horizontal">
+            <form onSubmit={formApi.submitForm} className="form-horizontal">
                 <div className="form-group">
                     <label htmlFor="domain" className="col-sm-3 control-label">Domain name</label>
                     <div className="col-sm-9">

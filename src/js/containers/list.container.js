@@ -20,15 +20,6 @@ const mapDispatchToProps = (dispatch) => {
                     domains.map(item => dispatch(add(item)))
                 });
         },
-        onClickItem: (domain) => {
-            fetch(`../../data/${domain.id}.json`)
-                .then(response => {
-                    return response.json()
-                })
-                .then((data) => {
-                    console.log(data);
-                });
-        },
         isUnregistry: (domain) => {
             const extension = domain.split('.')[1];
             return (extension && extension.match(/cars|lol/));
