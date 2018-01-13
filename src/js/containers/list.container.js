@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import ListComponent from '../components/list.component';
-import { add } from '../actions/app.action';
+import { add, remove } from '../actions/app.action';
 
 const mapStateToProps = state => {
     return {
@@ -20,9 +20,8 @@ const mapDispatchToProps = (dispatch) => {
                     domains.map(item => dispatch(add(item)))
                 });
         },
-        isUnregistry: (domain) => {
-            const extension = domain.split('.')[1];
-            return (extension && extension.match(/cars|lol/));
+        onRemove: (id) => {
+            dispatch(remove(id))
         }
     }
 }

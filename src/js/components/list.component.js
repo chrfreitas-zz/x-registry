@@ -20,13 +20,15 @@ class ListComponent extends React.Component {
                         <tr>
                             <th>Domain name</th>
                             <th>Price</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.props.domains.map((domain, index) => (
-                            <tr key={index} onClick={() => { this.props.onClickItem(domain) }}>
+                            <tr key={index}>
                                 <td>{domain.domain}</td>
                                 <td>{domain.price}</td>
+                                <td onClick={() => {this.props.onRemove(domain.id)}}>x</td>
                             </tr>
                         ))}
                     </tbody>
@@ -40,7 +42,7 @@ class ListComponent extends React.Component {
 ListComponent.propTypes = {
     domains: PropTypes.array,
     load: PropTypes.func,
-    onClickItem: PropTypes.func
+    onRemove: PropTypes.func
 }
 
 export default ListComponent;
