@@ -5,7 +5,7 @@ let id = 1;
 export const add = (domain) => {
     return {
         type: ADD_ITEM,
-        domain: {
+        payload : {
             id: id++,
             domain: domain.domain,
             price: domain.price
@@ -16,6 +16,8 @@ export const add = (domain) => {
 export const remove = (id = 0) => {
     return {
         type: REMOVE_ITEM,
-        id
+        payload: {
+            id
+        }
     }
 }

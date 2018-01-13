@@ -5,7 +5,7 @@ import { add, remove } from '../actions/app.action';
 
 const mapStateToProps = state => {
     return {
-        domains: state
+        domains: state.domains
     }
 }
 

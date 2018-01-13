@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/chrfreitas/x-registry#readme",
   "dependencies": {
+    "babel-preset-stage-2": "^6.24.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-form": "^2.15.0",

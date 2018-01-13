@@ -1,25 +1,25 @@
 import { ADD_ITEM, REMOVE_ITEM } from '../actions/app.action';
 
-export default (state = [], action) => {
-    switch (action.type) {
-        case ADD_ITEM:
-            return [
-                ...state,
-                {
-                    id: action.domain.id,
-                    domain: action.domain.domain,
-                    price: action.domain.price
-                }
-            ];
-            break;
+const initialState = {
+    domains: []
+}
 
-        case REMOVE_ITEM:
-            return state.filter(item => {
-                return (item.id != action.id)
-            })
+export default (state = initialState, action) => {
+    switch (action.type) {
+        case ADD_ITEM: {
+            const domains = state.domains.concat(action.payload);
+            return {...state, domains}
             break;
+        }
+
+        case REMOVE_ITEM: {
+            const domains = state.domains.filter(item => (item.id != action.payload.id));
+            return {...state, domains}
+            break;
+        }
 
         default:
             return state;
+            break;
     }
 }
