@@ -1,0 +1,16 @@
+.ui.form.x-form {
+    width: 80%;
+
+    button {
+        float: right;
+    }
+}
+
+.ui.table.x-table {
+    margin-top: 100px;
+
+    tbody tr td:last-child {
+        text-align: center;
+        cursor: pointer;
+    }
+}
