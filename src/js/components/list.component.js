@@ -16,9 +16,11 @@ class ListComponent extends React.Component {
         return (
             <table className="x-table ui celled table">
                 <thead>
-                    <th>Domain name</th>
-                    <th>Price</th>
-                    <th></th>
+                    <tr>
+                        <th>Domain name</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
                     {this.props.domains.map((domain, index) => (
