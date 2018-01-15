@@ -15,7 +15,7 @@ class ListComponent extends React.Component {
     render() {
         return (
             <div className="x-table">
-                <table className="table table-striped">
+                <table>
                     <thead>
                         <tr>
                             <th>Domain name</th>
