@@ -1,13 +1,20 @@
 @import "../../vendor/form.css";
 @import "../../vendor/table.css";
+@import "../../vendor/button.css";
 
 @import "variables";
+@import "custom";
+
+* {
+    box-sizing: border-box;
+}
 
 html,
 body,
 #root {
     height: 100%;
     position: relative;
+    font-family: 'Lato', sans-serif;
 }
 
 .x-container{

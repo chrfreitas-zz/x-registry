@@ -5,20 +5,20 @@ import PropTypes from 'prop-types';
 const FormComponent = ({ onSubmit }) => (
     <Form onSubmit={onSubmit}>
         { formApi => (
-            <form className="x-form" onSubmit={formApi.submitForm}>
-                <div>
+            <form className="x-form ui form" onSubmit={formApi.submitForm}>
+                <div className="field">
                     <label htmlFor="domain">Domain name</label>
-                    <Text field="domain" className="form-control" id="domain" required/>
+                    <Text field="domain" id="domain" required/>
                 </div>
-                <div>
-                    <label htmlFor="email">Registran Email</label>
-                    <Text field="email" className="form-control" id="email" required/>
+                <div className="field">
+                    <label htmlFor="email">Email</label>
+                    <Text field="email" id="email" required/>
                 </div>
-                <div>
+                <div className="field">
                     <label htmlFor="price">Price</label>
-                    <Text field="price" className="form-control" id="price" required/>
+                    <Text field="price" id="price" required/>
                 </div>
-                <button type="submit" className="btn btn-default">Save changes</button>
+                <button type="submit" className="ui primary basic button">Save</button>
             </form>
         )}
     </Form>
