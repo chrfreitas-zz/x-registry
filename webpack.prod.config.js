@@ -8,7 +8,7 @@ module.exports = {
         app: './src/js/index.js',
     },
     output: {
-        path:__dirname + '/public',
+        path: __dirname + '/public',
         filename: "[name].js"
     },
     module: {
